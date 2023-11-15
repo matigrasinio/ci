@@ -1,0 +1,15 @@
+name: Testing CI
+on:
+  push: 
+  branches: ["ci]
+jobs:
+  checking-env:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Git Version
+        run: git --version
+      - name: Docker Version
+        run: docker --version
+      - uses: actions/checkout@v3
+      - name: List files
+        run: ls -al
